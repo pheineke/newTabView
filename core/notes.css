@@ -1,0 +1,34 @@
+#note_view {
+    color: #FFF;
+
+}
+
+#note_inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#note_inputs textarea{
+    max-width: 250px;
+}
+
+
+#note_input {
+    height: 50px;
+    background-color: black;
+    color: #FFF;
+    border: solid rgb(79, 1, 168) 3px;
+    border-radius: 10px;
+}
+
+.note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note p {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}

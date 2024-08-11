@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+
+    color: #FFF;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media only screen and (aspect-ratio: 1/1) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Optional: Stellt sicher, dass die Höhe des Containers das gesamte Ansichtsfenster einnimmt */
+    }
+}
+
+/* Test Media Query */
+@media only screen and (aspect-ratio: 1/1) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+
+.view {
+    margin: 5px;
+
+    min-width: 350px;
+    width: fit-content;
+    background-color: #000000;
+
+    border: solid rgb(79, 1, 168) 3px;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+

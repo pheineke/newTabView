@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="core/quota.css">
+
+    <!-- Modules -->
+    <script src="core/time.js"></script>
+    <link rel="stylesheet" href="core/time.css">
+
+    <script src="core/weather.js"></script>
+    <link rel="stylesheet" href="core/weather.css">
+
+    <script src="core/notes.js"></script>
+    <link rel="stylesheet" href="core/notes.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="view" id="datetime">
+            <div id="date">--.--.---</div>
+            <div id="time">--:--:--</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="view">
+            <iframe id="quota" src="https://quota.wohnheim.uni-kl.de/" scrolling="no" style="width: 350px;height: 450px;"></iframe>
+        </div>
+        <div class="view">
+            <div class="weather-widget">
+                <p>Temperatur: <span id="temperature"></span>°C</p>
+                <p>Luftfeuchtigkeit: <span id="humidity"></span>%</p>
+                <p>Niederschlag: <span id="rain"></span> mm</p>
+                <p>Bewölkung: <span id="cloud_cover"></span> %</p>
+            </div>
+        </div>
+        <div class="view">
+            <div class="notes">
+                <h1>Notes</h1>
+                <div id="note_view"></div>
+
+                <div id="note_inputs">
+                    
+                    <div>
+                        <textarea id="note_input"></textarea>
+                        <button id="addNote" type="button">+</button>
+                    </div>
+                    
+                    <button id="clearNotes" type="button">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>

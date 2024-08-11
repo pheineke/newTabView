@@ -1,0 +1,19 @@
+.weather-widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: #000000;
+    color: #FFF;
+
+}
+
+.weather-widget p{
+    background-color: #000000;
+    color: #FFF;
+
+    margin: 5px 0;
+    font-size: 18px;
+}
+
