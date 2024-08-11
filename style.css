@@ -16,7 +16,6 @@ h1 {
 
     justify-content: center;
     align-items: center;
-
 }
 
 .content {
@@ -27,16 +26,30 @@ h1 {
     align-items: flex-start;
 }
 
-@media only screen and (aspect-ratio: 1/1) {
+#quota, .weather-widget, .notes {
+    flex: 1;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
     .content {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Optional: Stellt sicher, dass die Höhe des Containers das gesamte Ansichtsfenster einnimmt */
+    }
+    #quota, .weather-widget, .notes {
+        width: 100%;
+        margin: 10px 0;
     }
 }
-
+@media only screen and (max-aspect-ratio: 9/16) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Optional: Ensures the container height takes up the entire viewport */
+    }
+}
 /* Test Media Query */
 @media only screen and (aspect-ratio: 1/1) {
     body {
