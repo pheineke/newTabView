@@ -1,0 +1,14 @@
+#random_photo {
+    width: 350px;
+    max-height: 475px;
+    min-height: 136px;
+    margin: 5px;
+
+    width: fit-content;
+    background-color: #000000;
+
+    border: solid rgb(79, 1, 168) 3px;
+    border-radius: 20px;
+
+    overflow: hidden;
+}
