@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-        const city_url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+        const city_url = 
+        `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en
+        `;
 
         fetch(city_url)
             .then(response => response.json())
