@@ -11,32 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(showPosition);
-        
     }
 
-    // setTimeout(() => {
-    //     const city_url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=10&addressdetails=1`;
+    setTimeout(() => {
+        const city_url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
 
-    //     fetch(city_url)
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (data.address && data.address.city) {
-    //                 console.log("Stadt:", data.address.city);
-    //                 document.getElementById("wetter_loc").textContent = "Aktuelles Wetter in "+ data.address.city;
-    //             } else if (data.address && data.address.town) {
-    //                 console.log("Stadt:", data.address.town);
-    //                 document.getElementById("wetter_loc").textContent = "Aktuelles Wetter in "+ data.address.town;
-    //             } else if (data.address && data.address.village) {
-    //                 console.log("Stadt:", data.address.village);
-    //                 document.getElementById("wetter_loc").textContent = "Aktuelles Wetter in "+ data.address.village;
-    //             } else {
-    //                 document.getElementById("wetter_loc").textContent = "Standort konnte nicht zugeordnet werden";
-    //             }
-    //         })
-    //         .catch(error => console.error('Fehler:', error));
-    // }, 1000);
+        fetch(city_url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                console.log(data.address.city)
+                city = data.address.city;
+            })
+            .catch(error => console.error('Fehler:', error));
+    }, 1000);
 
-    //console.log(city)
+    console.log(city)
     setTimeout(() => {
         //https://open-meteo.com/en/docs#hourly=temperature_2m,relative_humidity_2m,rain,showers,weather_code,cloud_cover&past_days=1
         const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relative_humidity_2m,rain,showers,weather_code,cloud_cover&past_days=1`;
@@ -55,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("humidity").textContent = humidity;
                 document.getElementById("rain").textContent = rain;
                 document.getElementById("cloud_cover").textContent = cloud_cover;
-                //document.getElementById("weather-code").textContent = weatherCode;
+
+                document.getElementById("city").textContent = "Wetter in "+ city;
 
                 
             })
