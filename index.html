@@ -21,13 +21,14 @@
     <script src="core/random_photo.js"></script>
     <link rel="stylesheet" href="core/random_photo.css">   
     <style>
-        html {
-            background-color: black;
-        }
-        body {
-            background-color: black;
-        }
+        html { background-color: black; }
+        body { background-color: black; }
     </style>
+    <script>
+        var blurred = false;
+        window.onblur = function() { blurred = true; };
+        window.onfocus = function() { blurred && (location.reload()); };
+    </script>
 </head>
 
 <body>
